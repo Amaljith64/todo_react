@@ -96,8 +96,11 @@ function App() {
                               <p>{obj.toDoTime}</p>
                            </div>
                            <div className="right bin">
-                              <i onClick={(e) => {                                
+                              <i onClick={(e) => {
+                                 let isdelete = window.confirm("Deleting ToDo permanently !");
+                                 if (isdelete) {
                                     e.target.value = true;
+                                 }
                                  setToDos(toDos.filter((obj2) => {
                                     if (obj2.id === obj.id) {
                                        obj2.statusRemove = e.target.value;
@@ -200,9 +203,10 @@ function App() {
                         <div key={obj.id} className="toDo">
                            <div className="left recycle">
                               <i onClick={(e) => {
-                                 
+                                 let isdelete = window.confirm("Retrieving dropped ToDo");
+                                 if (isdelete) {
                                     e.target.value = true;
-                              
+                                 }
                                  setToDos(toDos.filter((obj2) => {
                                     if (obj2.id === obj.id) {
                                        obj2.statusRetrieve = e.target.value;
@@ -219,9 +223,10 @@ function App() {
                            </div>
                            <div className="right bin">
                               <i onClick={(e) => {
-                                
+                                 let isdelete = window.confirm("Deleting ToDo permanently !");
+                                 if (isdelete) {
                                     e.target.value = true;
-                                 
+                                 }
                                  setToDos(toDos.filter((obj2) => {
                                     if (obj2.id === obj.id) {
                                        obj2.statusRemove = e.target.value;
